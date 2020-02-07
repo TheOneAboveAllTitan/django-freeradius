@@ -19,6 +19,7 @@ class BaseTestAdmin(object):
     def _superuser_login(self):
         user = User.objects.create_superuser(username='admin',
                                              password='admin',
+                                             is_staff=True,
                                              email='test@test.org')
         self.client.force_login(user)
 
